@@ -36,22 +36,21 @@ function knapsackDPComp(wgt, val, cap) {
   const n = wgt.length
   // 初始化 dp 表
   const dp = Array(cap + 1).fill(0)
-  const prev = dp
+  let prev = dp
   // 状态转移
   for (let i = 1; i <= n; i++) {
-    // 倒序遍历
     for (let c = 1; c <= cap; c++) {
       if (weg[i - 1] > c) {
         // 如果第i个物品的重量大于当前剩余容量c，则第dp[c] = dp[c - 1]
-        dp[c] = dp[c - 1]
+        dp[c] = prev[c]
       } else {
         // dp[c]的最优子结构： 不选i的最大价值prev[c - 1] - 选i的最大价值prev[c - weg[i - 1] + val[i - 1] 两者之间的最大值
-        dp[c] = Math.max(prev[c - 1], prev[c - weg[i - 1]] + val[i - 1])
+        dp[c] = Math.max(prev[c], prev[c - weg[i - 1]] + val[i - 1])
       }
     }
-    prev = dp
+    prev = dp.slice()
   }
   return dp[cap]
 }
 
-console.log(knapsackDP(weg, val, cap))
+console.log(knapsackDPComp(weg, val, cap))
