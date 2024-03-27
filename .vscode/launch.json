@@ -8,10 +8,8 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}/4-backtrack/04-n-queens.js"
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/5-dynamic-programming/08-coin-change.js"
     }
   ]
 }
