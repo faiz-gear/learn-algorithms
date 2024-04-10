@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/6-greedy/02-fraction-knapsack.js"
+      "program": "${workspaceFolder}/7-practice/11-leetcode-39.js"
     }
   ]
 }
