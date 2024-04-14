@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/7-practice/11-leetcode-39.js"
+      "program": "${workspaceFolder}/7-practice/16-leetcode-88.js"
     }
   ]
 }
