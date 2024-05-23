@@ -17,26 +17,20 @@
  * @return {ListNode}
  */
 var reverseList = function (head) {
-  if (!head) return head
-  let temp = new ListNode()
-  // 双指针法
-  let l1 = head
-  let l2 = head.next
+  if (!head || !head.next) return head
   let prev = null
+  let cur = head
+  let next = head.next
 
-  while (l2) {
-    // 记录旧的l2
-    temp.val = l2.val
-    temp.next = l2.next
-
-    l2.next = l1
-    l1.next = prev
-    // 后移
-    prev = l1
-    l1 = l2
-    l2 = temp.next
+  while (cur) {
+    // 反转指针
+    cur.next = prev
+    // 右移指针
+    prev = cur
+    cur = next
+    next = next ? next.next : null
   }
 
-  return l1
+  return prev
 }
 // @lc code=end
